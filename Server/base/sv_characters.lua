@@ -1,5 +1,6 @@
 local function SpawnCharacter(ply)
     local plyCharacter = Character(Vector(0, 0, 100))
+    plyCharacter:SetHealth(100)
     ply:Possess(plyCharacter)
 end
 Player.Subscribe("Spawn", SpawnCharacter)

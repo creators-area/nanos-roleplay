@@ -1,3 +1,5 @@
+NanosRP = NanosRP or {}
+
 print("Start Server Package ...")
 
 Package.Require("base/sv_characters.lua")
