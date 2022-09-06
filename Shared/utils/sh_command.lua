@@ -29,10 +29,10 @@ function command.Run(ply, text)
 
     if not cmd then return end
 
-    -- Log the command run by the player
+    -- Log the command ran by the player
     if Server then
         if ply and ply:IsValid() then
-            Package.Log(ply:GetName() .. " try to run the command : " .. cmd)
+            Package.Log(ply:GetName() .. " tried to run command: " .. cmd)
         end
     end
 
@@ -44,12 +44,12 @@ end
 
 if Server then
 
-    -- A player run a command
+    -- When a player runs a command
     Events.Subscribe("PlayerCommand", function(ply, text)
         command.Run(ply, text)
     end)    
 
-    -- The server run a command
+    -- When a command is performed by the console
     Server.Subscribe("Console", function(text)
         return command.Run(nil, text)
     end)
