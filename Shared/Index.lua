@@ -1,5 +1,7 @@
 NanosRP = NanosRP or {}
 
+Package.Require("sh_config.lua")
+
 print("Start Shared Package ...")
 
 Package.Require("utils/sh_util.lua")
