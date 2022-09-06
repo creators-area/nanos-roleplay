@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+
+/* GLOBAL CSS FOR HUD */
+
+.NanosRP_TextIcons {
+	z-index: 2;
+	position: absolute;
+	display: table;
+	bottom: 0;
+	left: 1.5vh;
+	top: 0.45vh;
+	transform: translateX(-50%);
+	font-size: 2.5vh;
+	color: white;
+}
+
+.NanosRP_TextStat {
+	display: inline-block;
+	width: 24vh;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 2.6vh;
+	text-align: left;
+	margin-left: 3vh !important;
+	margin-top: 0.3vh !important;
+	font-size: 2.1vh;
+	font-family: 'Rajdhani', sans-serif;
+	color: white;
+}
+
+/**/
+
+.NanosRP_LifeSIcons {
+	z-index: 2;
+	position: absolute;
+	display: table;
+	bottom: 0;
+	left: 2vh;
+	top: 3vh;
+	transform: translateX(-50%);
+	font-size: 2.5vh;
+	color: white;
+}
+
+.NanosRP_LifeSText {
+	display: inline-block;
+	width: 3vh;
+	height: 2.6vh;
+	margin-left: 0.5vh;
+	margin-top: 5vh;
+	font-size: 2vh;
+	font-family: 'Rajdhani', sans-serif;
+	text-align: center;
+	color: white;
+}
+
+#NanosRP_LimitBar {
+	position: absolute;
+	bottom: 0.5vh;
+	left: 0.5vh;
+	height: 10.2vh;
+	width: 4vh;
+	border-radius: 0.5vh;
+}
+
+
+
+/* CSS FOR NAME BOX */
+#NanosRP_NameBox {
+	position: absolute;
+	bottom: 2vh;
+	left: 2vh;
+	height: 3.2vh;
+	background-color: rgba(30, 30, 30, 0.5);
+	width: 27vh;
+	border-radius: 0.5vh;
+}
+
+/* CSS FOR JOB & SALARY BOX */
+#NanosRP_JobBox {
+	position: absolute;
+	bottom: 6vh;
+	left: 2vh;
+	height: 3.2vh;
+	background-color: rgba(30, 30, 30, 0.5);
+	width: 27vh;
+	border-radius: 0.5vh;
+}
+
+/* CSS FOR MONEY BOX */
+#NanosRP_MoneyBox {
+	position: absolute;
+	bottom: 10vh;
+	left: 2vh;
+	height: 3.2vh;
+	background-color: rgba(30, 30, 30, 0.5);
+	width: 27vh;
+	border-radius: 0.5vh;
+}
+
+/* CSS FOR HEALTH BOX */
+#NanosRP_HealthBox {
+	position: absolute;
+	bottom: 2vh;
+	left: 30vh;
+	height: 11.2vh;
+	background-color: rgba(30, 30, 30, 0.5);
+	width: 5vh;
+	border-radius: 0.5vh;
+}
+
+#NanosRP_LimitBar #NanosRP_HealthBar {
+	--healthbar_height: 1;
+	background-color: rgb(192, 57, 43);
+	width: 4vh;
+	height: calc(100% * var(--healthbar_height));
+	border-radius: 0.5vh;
+	bottom: 0;
+	position: absolute;
+}
+
+/* CSS FOR ARMOR BOX */
+#NanosRP_ArmorBox {
+	position: absolute;
+	bottom: 2vh;
+	left: 36vh;
+	height: 11.2vh;
+	background-color: rgba(30, 30, 30, 0.5);
+	width: 5vh;
+	border-radius: 0.5vh;
+}
+
+#NanosRP_LimitBar #NanosRP_ArmorBar {
+	--armorbar_height: 1;
+	background-color: rgb(41, 128, 185);
+	width: 4vh;
+	height: calc(100% * var(--armorbar_height));
+	border-radius: 0.5vh;
+	bottom: 0;
+	position: absolute;
+}
+
+/* CSS FOR FOOD BOX */
+#NanosRP_FoodBox {
+	position: absolute;
+	bottom: 2vh;
+	left: 42vh;
+	height: 11.2vh;
+	background-color: rgba(30, 30, 30, 0.5);
+	width: 5vh;
+	border-radius: 0.5vh;
+}
+
+#NanosRP_LimitBar #NanosRP_FoodBar {
+	--foodbar_height: 1;
+	background-color: rgb(141, 86, 38);
+	width: 4vh;
+	height: calc(100% * var(--foodbar_height));
+	border-radius: 0.5vh;
+	bottom: 0;
+	position: absolute;
+}

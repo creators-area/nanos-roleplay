@@ -2,6 +2,8 @@ local function SpawnCharacter(ply)
     local plyCharacter = Character(Vector(0, 0, 100))
     plyCharacter:SetHealth(100)
     ply:Possess(plyCharacter)
+
+    Events.CallRemote("NanosRP::SetupVisual", ply) -- Call Visual when player possess a character
 end
 Player.Subscribe("Spawn", SpawnCharacter)
 
