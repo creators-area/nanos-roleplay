@@ -2,8 +2,8 @@ NanosRP = NanosRP or {}
 
 World.SpawnDefaultSun()
 
-print("Start Client Package ...")
+print("Starting client packages...")
 
 Package.Require("base/cl_setup.lua")
 
-print("End Client Package ...")
+print("Client packages loaded!")
