@@ -1,6 +1,13 @@
+local torsoBones = {
+    ["spine_01"] = true,
+    ["spine_02"] = true,
+    ["spine_03"] = true,
+}
+
 local function SpawnCharacter(ply)
     local plyCharacter = Character(Vector(0, 0, 100))
     plyCharacter:SetHealth(100)
+    plyCharacter:SetArmor(0)
     ply:Possess(plyCharacter)
 
     Events.CallRemote("NanosRP::SetupVisual", ply) -- Call Visual when player possess a character
@@ -23,6 +30,20 @@ Character.Subscribe("Death", function(self)
         if not IsValid(ply) then return end
         SpawnCharacter(ply)
     end, 5000)
+end)
+
+Character.Subscribe("TakeDamage", function(self, damage, bone)
+    if torsoBones[bone] then
+        local damageTook = damage
+        local charArmor = self:GetArmor()
+        if charArmor >= damageTook then
+            self:SetArmor(charArmor - damageTook)
+        else
+            local damageHealth = damageTook - charArmor
+            self:SetArmor(0)
+            self:SetHealth(self:GetHealth()-damageHealth)
+        end
+    end
 end)
 
 

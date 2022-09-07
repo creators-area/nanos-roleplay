@@ -16,30 +16,31 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		</div>
 
 
+
+		<span id="NanosRP_VarHealth">100</span>
 		<div id="NanosRP_HealthBox">
 			<div id="NanosRP_LimitBar">
 				<div id="NanosRP_HealthBar">
-					<i class='bx bx-heart NanosRP_LifeSIcons'></i>
-					<span id="NanosRP_VarHealth" class="NanosRP_LifeSText">100</span>
 				</div>
+				<i class='bx bx-heart NanosRP_LifeSIcons'></i>
 			</div>
 		</div>
 
+		<span id="NanosRP_VarArmor">100</span>
 		<div id="NanosRP_ArmorBox">
 			<div id="NanosRP_LimitBar">
 				<div id="NanosRP_ArmorBar">
-					<i class='bx bx-shield NanosRP_LifeSIcons'></i>
-					<span id="NanosRP_VarArmor" class="NanosRP_LifeSText">100</span>
 				</div>
+				<i class='bx bx-shield NanosRP_LifeSIcons'></i>
 			</div>
 		</div>
 
+		<span id="NanosRP_VarFood">100</span>
 		<div id="NanosRP_FoodBox">
 			<div id="NanosRP_LimitBar">
 				<div id="NanosRP_FoodBar">
-					<i class='bx bx-baguette NanosRP_LifeSIcons'></i>
-					<span id="NanosRP_VarFood" class="NanosRP_LifeSText">100</span>
 				</div>
+				<i class='bx bx-baguette NanosRP_LifeSIcons'></i>
 			</div>
 		</div>
 
@@ -49,6 +50,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 // Called at the init of player's UI
-Events.Subscribe("NanosRP::InitVisual", function(name) {
+Events.Subscribe("NanosRP::InitVisual", function(name, health, armor) {
     $("#NanosRP_VarName").html(name);
+	$("#NanosRP_VarHealth").html(health);
+	$("#NanosRP_VarArmor").html(armor);
+	document.getElementById( "NanosRP_HealthBar" ).style.setProperty( "--healthbar_height", (health / 100 ) )
+	document.getElementById( "NanosRP_ArmorBar" ).style.setProperty( "--armorbar_height", ( armor / 100 ) )
 });

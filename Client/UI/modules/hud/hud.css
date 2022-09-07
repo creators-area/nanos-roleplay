@@ -43,18 +43,6 @@
 	color: white;
 }
 
-.NanosRP_LifeSText {
-	display: inline-block;
-	width: 3vh;
-	height: 2.6vh;
-	margin-left: 0.5vh;
-	margin-top: 5vh;
-	font-size: 2vh;
-	font-family: 'Rajdhani', sans-serif;
-	text-align: center;
-	color: white;
-}
-
 #NanosRP_LimitBar {
 	position: absolute;
 	bottom: 0.5vh;
@@ -120,6 +108,20 @@
 	position: absolute;
 }
 
+#NanosRP_VarHealth {
+	z-index: 2;
+	position: absolute;
+	display: inline-block;
+	width: 3vh;
+	height: 2.6vh;
+	left: 31vh;
+	top: 92.5vh;
+	font-size: 2vh;
+	font-family: 'Rajdhani', sans-serif;
+	text-align: center;
+	color: white;
+}
+
 /* CSS FOR ARMOR BOX */
 #NanosRP_ArmorBox {
 	position: absolute;
@@ -141,6 +143,20 @@
 	position: absolute;
 }
 
+#NanosRP_VarArmor {
+	z-index: 2;
+	position: absolute;
+	display: inline-block;
+	width: 3vh;
+	height: 2.6vh;
+	left: 37vh;
+	top: 92.5vh;
+	font-size: 2vh;
+	font-family: 'Rajdhani', sans-serif;
+	text-align: center;
+	color: white;
+}
+
 /* CSS FOR FOOD BOX */
 #NanosRP_FoodBox {
 	position: absolute;
@@ -160,4 +176,18 @@
 	border-radius: 0.5vh;
 	bottom: 0;
 	position: absolute;
+}
+
+#NanosRP_VarFood {
+	z-index: 2;
+	position: absolute;
+	display: inline-block;
+	width: 3vh;
+	height: 2.6vh;
+	left: 43vh;
+	top: 92.5vh;
+	font-size: 2vh;
+	font-family: 'Rajdhani', sans-serif;
+	text-align: center;
+	color: white;
 }

@@ -42,6 +42,12 @@ function command.Run(ply, text)
     return false -- Command found
 end
 
+function Character:GetArmor()
+    if self then
+        return self:GetValue("NanosRP_Armor")
+    end
+end
+
 if Server then
 
     -- A player run a command
@@ -54,11 +60,16 @@ if Server then
         return command.Run(nil, text)
     end)
 
+    function Character:SetArmor(amount)
+        if self then
+            self:SetValue("NanosRP_Armor", amount, true)
+        end
+    end
+
 elseif Client then
 
     Client.Subscribe("Console", function(text)
         Events.CallRemote("PlayerCommand", text)
         return command.Run(Client.GetLocalPlayer(), text)
     end)
-
 end
