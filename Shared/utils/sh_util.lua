@@ -2,17 +2,8 @@ function IsValid(entity)
     return entity and entity:IsValid()
 end
 
-function PrintTable(table, indent)
-    indent = indent or 0
-    for k, v in pairs(table) do
-        if type(v) == "table" then
-            print(k .. "(table) :")
-            PrintTable(v, indent + 1)
-        else
-            print(string.rep("\t", indent, "") .. k .. ":")
-            print(string.rep("\t", indent + 1, "") .. v)
-        end
-    end
+function PrintTable(table)
+    print(NanosUtils.Dump(table))
 end
 
 local arrayPlayer = {}
