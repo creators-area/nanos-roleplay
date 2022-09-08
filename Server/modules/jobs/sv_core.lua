@@ -77,9 +77,9 @@ Events.Subscribe("NanosRP::PlayerLoaded", function(ply)
 	Events.CallRemote("NanosRP::SendJobs", ply, NanosRP.Jobs)
 end)
 
-Timer.SetInterval(1000 * 60 * 5, function()
+Timer.SetInterval(function()
 	for _, v in ipairs(Player.GetAll()) do
 		v:addMoney(v:getJobSalary())
 		Server.SendChatMessage(v, "Tu as reçu " .. v:getJobSalary() .. "$")
 	end
-end)
+end, 1000 * 60 * 5)
