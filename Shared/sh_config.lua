@@ -2,12 +2,12 @@
     Server Settings
 ]]
 
-NanosRP.Owner = "76561198220301544" -- The steamid of the owner of the server
+NanosRP.Owner = "76561198220301544" -- The SteamID64 of the server owner
 
 NanosRP.UseLuaConfig = true -- Use the lua config and override the config.toml
 
-NanosRP.Name = "NanosRP" -- The name of the server
-NanosRP.Description = "Development server for the gamemode NanosRP" -- The description of the server
-NanosRP.MaxPlayers = 999 -- The max players of the server
-NanosRP.Password = "" -- The password of the server
-NanosRP.LogoURL = "" -- The logo of the server
+NanosRP.Name = "NanosRP" -- The name of your server
+NanosRP.Description = "Development server for the gamemode NanosRP" -- Description that will be shown in the main menu
+NanosRP.MaxPlayers = 999 -- Maximum amounts of players allowed on the server
+NanosRP.Password = "" -- Password required for all those who want to join the server
+NanosRP.LogoURL = "" -- URL of the logo that will be used in the main menu
