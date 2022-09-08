@@ -27,6 +27,7 @@ function Player:loadData()
                     self:SetValue("NanosRP::" .. k, v)
                 end
             end
+            Events.Call("NanosRP::PlayerLoaded", self)
         else
             self:createData()
         end
