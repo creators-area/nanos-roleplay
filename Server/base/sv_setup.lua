@@ -1,15 +1,15 @@
 NanosRP.SpawnPoints = NanosRP.SpawnPoints or {}
 
-NanosRP:Query([[CREATE TABLE IF NOT EXISTS NanosRP_Spawn (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    posX INTEGER,
-    posY INTEGER,
-    posZ INTEGER,
-    rotX INTEGER,
-    rotY INTEGER,
-    rotZ INTEGER
+NanosRP:Query([[CREATE TABLE IF NOT EXISTS `NanosRP_Spawn` (
+    `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+    `posX` INTEGER,
+    `posY` INTEGER,
+    `posZ` INTEGER,
+    `rotX` INTEGER,
+    `rotY` INTEGER,
+    `rotZ` INTEGER
 )]], function()
-    NanosRP:Select("SELECT * FROM NanosRP_Spawn", function(result)
+    NanosRP:Select("SELECT * FROM `NanosRP_Spawn`", function(result)
         if result and result[1] then
             NanosRP.SpawnPoints = result
         end
