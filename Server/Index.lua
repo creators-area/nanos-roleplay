@@ -11,6 +11,7 @@ Package.Require("base/sv_players.lua")
 
 Package.Require("modules/jobs/sv_core.lua")
 Package.Require("modules/money/sv_core.lua")
+Package.Require("modules/hunger/sv_core.lua")
 
 print("Server packages loaded!")
 
