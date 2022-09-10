@@ -1,5 +1,3 @@
-NanosRP:AddPlayerColumn("money", "BIGINT", 0)
-
 function Player:addMoney(money, callback)
     local oldMoney = self:getMoney()
     local newMoney = self:getMoney() + money

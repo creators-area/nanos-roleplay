@@ -3,15 +3,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	body.insertAdjacentHTML("afterbegin", `
 
 		<div id="NanosRP_NameBox">
-			<i class='bx bx-user NanosRP_TextIcons'></i>
+			<span class="material-symbols-outlined NanosRP_TextIcons">person</span>
 			<p id="NanosRP_VarName" class="NanosRP_TextStat">Player.Name</p>
 		</div>
 		<div id="NanosRP_JobBox">
-			<i class='bx bx-briefcase NanosRP_TextIcons'></i>
+			<span class="material-symbols-outlined NanosRP_TextIcons">business_center</span>
 			<p id="NanosRP_VarJobSalary" class="NanosRP_TextStat">Citizen - $0</p>
 		</div>
 		<div id="NanosRP_MoneyBox">
-			<i class='bx bx-wallet NanosRP_TextIcons'></i>
+			<span class="material-symbols-outlined NanosRP_TextIcons">account_balance_wallet</span>
 			<p id="NanosRP_VarJobSalary" class="NanosRP_TextStat">$0</p>
 		</div>
 
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			<div id="NanosRP_LimitBar">
 				<div id="NanosRP_HealthBar">
 				</div>
-				<i class='bx bx-heart NanosRP_LifeSIcons'></i>
+				<span class="material-symbols-outlined NanosRP_LifeSIcons">favorite</span>
 			</div>
 		</div>
 
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			<div id="NanosRP_LimitBar">
 				<div id="NanosRP_ArmorBar">
 				</div>
-				<i class='bx bx-shield NanosRP_LifeSIcons'></i>
+				<span class="material-symbols-outlined NanosRP_LifeSIcons">shield</span>
 			</div>
 		</div>
 
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			<div id="NanosRP_LimitBar">
 				<div id="NanosRP_FoodBar">
 				</div>
-				<i class='bx bx-baguette NanosRP_LifeSIcons'></i>
+				<span class="material-symbols-outlined NanosRP_LifeSIcons">lunch_dining</span>
 			</div>
 		</div>
 
