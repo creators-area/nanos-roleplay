@@ -15,6 +15,24 @@ function GetBySteamID(steamid)
     return arrayPlayer[steamid]
 end
 
+function NanosRP.Explode(separator, str)
+	if separator == "" then return totable(str) end
+
+	local ret = {}
+	local curp = 1
+
+	for i = 1, string.len(str) do
+		local startp, endp = string.find(str, separator, curp)
+		if not startp then break end
+		ret[i] = string.sub(str, curp, startp - 1)
+		curp = endp + 1
+	end
+
+	ret[#ret + 1] = string.sub(str, curp)
+
+	return ret
+end
+
 if Server then
     Player.Subscribe("Ready", function(ply)
         arrayPlayer[ply:GetSteamID()] = ply

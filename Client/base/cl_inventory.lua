@@ -1,4 +1,3 @@
--- Register keybind for opening inventory
 Input.Register("NanosRP - Open Inventory", "K")
 Input.Register("NanosRP - Grab Object", "M")
 
@@ -8,9 +7,7 @@ NanosRP.Inventory = WebUI("NanosRP Inventory", "file://UI/inventory.html", false
 Input.Bind("NanosRP - Open Inventory", InputEvent.Pressed, function()
     if not InventoryBool then
         InventoryBool = true
-        NanosRP.Inventory:SetVisible(true)
-        Client.SetMouseEnabled(true)
-        Client.SetInputEnabled(false)
+        Events.CallRemote("NanosRP::GetInventory")
     else
         InventoryBool = false
         NanosRP.Inventory:SetVisible(false) 
@@ -20,8 +17,19 @@ Input.Bind("NanosRP - Open Inventory", InputEvent.Pressed, function()
 end)
 
 Input.Bind("NanosRP - Grab Object", InputEvent.Pressed, function()
-    local lookedEntityType = GetEyeTrace().Entity:GetType()
-    if lookedEntityType == "Weapon" or lookedEntityType == "Entity" then 
-        print(lookedEntityType)
+    local lookedEntity = GetEyeTrace().Entity
+    if lookedEntity then
+        if lookedEntity:GetType() == "Weapon" then
+            Events.CallRemote("NanosRP:GrabItem", lookedEntity)
+        end
     end
+end)
+
+Events.Subscribe("NanosRP::GetInventory", function(inventory) 
+    print(inventory)
+    NanosRP.Inventory:SetVisible(true)
+    NanosRP.Inventory:BringToFront()
+    NanosRP.Inventory:CallEvent("NanosRP::InitInventory")
+    Client.SetMouseEnabled(true)
+    Client.SetInputEnabled(false)
 end)
