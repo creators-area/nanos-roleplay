@@ -27,6 +27,8 @@ function Player:loadData()
                     self:SetValue("NanosRP::" .. k, v)
                 end
             end
+            self:setJob(JOB_CITIZEN)
+            self:setHunger(100)
             Events.Call("NanosRP::PlayerLoaded", self)
         else
             self:createData()
@@ -36,12 +38,10 @@ end
 
 Player.Subscribe("Spawn", function(ply)
     ply:loadData()
-    ply:setJob(JOB_CITIZEN)
 end)
 
 Events.Subscribe("NanosRP::GamemodeLoaded", function(ply)
     for _, v in pairs(Player.GetAll()) do
         v:loadData()
-        v:setJob(JOB_CITIZEN)
     end
 end)
