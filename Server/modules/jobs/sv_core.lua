@@ -1,9 +1,4 @@
-NanosRP.Jobs = {}
-
-NanosRP.Jobs[0] = {
-	name = "NO JOB",
-	salary = 0,
-}
+NanosRP.Jobs = NanosRP.Jobs or {}
 
 local function reloadJobs()
 	NanosRP:Query([[CREATE TABLE IF NOT EXISTS `NanosRP_Jobs` (
@@ -70,7 +65,8 @@ function Player:setJob(index)
 	if not NanosRP.Jobs[index] then return end
 	local job = NanosRP.Jobs[index]
 	Server.BroadcastChatMessage(self:GetName() .. " est maintenant " .. job.name)
-	self:SetValue("Job", index, true)
+	self:SetValue("NanosRP::Job", index, true)
+	Events.CallRemote("NanosRP::UpdateHUD", self)
 end
 
 Events.Subscribe("NanosRP::PlayerLoaded", function(ply)
