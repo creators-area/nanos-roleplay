@@ -50,10 +50,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 // Called at the init of player's UI
-Events.Subscribe("NanosRP::InitVisual", function(name, health, armor) {
+Events.Subscribe("NanosRP::InitVisual", function(name, health, armor, money, job, jobSalary, hunger) {
     $("#NanosRP_VarName").html(name);
 	$("#NanosRP_VarHealth").html(health);
 	$("#NanosRP_VarArmor").html(armor);
-	document.getElementById( "NanosRP_HealthBar" ).style.setProperty( "--healthbar_height", (health / 100 ) )
-	document.getElementById( "NanosRP_ArmorBar" ).style.setProperty( "--armorbar_height", ( armor / 100 ) )
+	$("#NanosRP_VarMoney").html(money);
+	$("#NanosRP_VarJobSalary").html(job + " - $" + jobSalary);
+	$("#NanosRP_VarFood").html(Math.round(hunger));
+	document.getElementById( "NanosRP_HealthBar" ).style.setProperty( "--healthbar_height", (health / 100))
+	document.getElementById( "NanosRP_ArmorBar" ).style.setProperty( "--armorbar_height", (armor / 100))
+	document.getElementById( "NanosRP_FoodBar" ).style.setProperty( "--foodbar_height", (hunger / 100))
 });
