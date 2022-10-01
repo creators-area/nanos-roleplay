@@ -3,7 +3,8 @@ NanosRP:Query([[CREATE TABLE IF NOT EXISTS `NanosRP_Players` (
 		`firstName` TEXT,
 		`lastName` TEXT,
         `inventory` TEXT,
-        `money` BIGINT
+        `money` BIGINT,
+        `rank` TEXT
 	)]], function()
 
 end)
@@ -16,9 +17,9 @@ function NanosRP:AddPlayerColumn(name, type, default, callback)
 end
 
 function Player:createData()
-    NanosRP:Query("INSERT INTO `NanosRP_Players` (`steamid`, `firstName`, `lastName`, `inventory`, `money`) VALUES (?, ?, ?, ?, ?)", function()
+    NanosRP:Query("INSERT INTO `NanosRP_Players` (`steamid`, `firstName`, `lastName`, `inventory`, `money`, `rank`) VALUES (?, ?, ?, ?, ?, ?)", function()
         self:loadData()
-    end, self:GetSteamID(), "NO", "NO", "", 0)
+    end, self:GetSteamID(), "NO", "NO", "", 0, "user")
 end
 
 function Player:loadData()
