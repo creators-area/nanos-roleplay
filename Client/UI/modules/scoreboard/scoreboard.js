@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 		<div id="NanosRP_Scb" class="hero">
 			<div class="top">
-			<h1>Scoreboard Menu</h1>
-			</top>
+				<h1>Scoreboard Menu</h1>
+			</div>
 			<div class="ply_tbl">
 				<table class="table">
 					<thead>
