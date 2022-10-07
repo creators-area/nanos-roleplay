@@ -12,3 +12,6 @@ NanosRP.Description = "Development server for the gamemode NanosRP" -- Descripti
 NanosRP.MaxPlayers = 999 -- Maximum amounts of players allowed on the server
 NanosRP.Password = "" -- Password required for all those who want to join the server
 NanosRP.LogoURL = "" -- URL of the logo that will be used in the main menu
+
+NanosRP.CrouchProneAim = false -- Enable Aiming when character is prone or crouch
+NanosRP.RealisticAim = true -- Disable Aiming when character is not on the ground
