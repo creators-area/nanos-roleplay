@@ -44,6 +44,27 @@ Character.Subscribe("TakeDamage", function(self, damage, bone)
     end
 end)
 
+-- Disable Aiming when Crouching and Proning
+if not NanosRP.CrouchProneAim then
+    Character.Subscribe("StanceModeChanged", function(self, old_state, new_state)
+        self:SetCanAim(new_state ~= StanceMode.Proning and new_state ~= StanceMode.Crouching) -- Disable aiming when newstate is not idle
+
+        if new_state == StanceMode.Proning or new_state == StanceMode.Crouching then
+          self:SetWeaponAimMode(0) -- Force stop aiming when crouching or proning
+        end
+      end)
+end
+
+-- Disable Aiming when character is not on the ground
+if NanosRP.RealisticAim then
+    Character.Subscribe("FallingModeChanged", function(self, old_state, new_state)
+      self:SetCanAim(new_state == FallingMode.None) -- Disable Aiming when is not on the ground
+
+      if new_state ~= FallingMode.None then
+        self:SetWeaponAimMode(0) -- Force Disable Aiming when not on the ground
+      end
+    end)
+end
 
 -- For reload package
 for _, ply in ipairs(Player.GetAll()) do

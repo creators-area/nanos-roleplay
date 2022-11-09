@@ -14,6 +14,10 @@ Package.Require("modules/money/sv_core.lua")
 Package.Require("modules/hunger/sv_core.lua")
 Package.Require("modules/inventory/sv_core.lua")
 
+Package.Require("modules/admin/sv_admincmds.lua")
+Package.Require("modules/admin/sv_admincore.lua")
+Package.Require("modules/admin/sv_adminconfig.lua")
+
 print("Server packages loaded!")
 
 Events.Call("NanosRP::GamemodeLoaded")
@@ -22,9 +26,3 @@ Events.Call("NanosRP::GamemodeLoaded")
 command.Add("ReloadPackage", function()
     Server.ReloadPackage("nanos-roleplay")
 end)
-
-
-Package.RequirePackage("nanos-world-weapons")
-
-NanosWorldWeapons.AK47(Vector(200, 0, 300), Rotator())
-NanosWorldWeapons.GE36(Vector(200, 0, 500), Rotator())

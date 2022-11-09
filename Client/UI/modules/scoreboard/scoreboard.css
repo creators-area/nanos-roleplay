@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+	font-family:'Rajdhani', sans-serif;
+}
+
+body{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero{
+	width: 80vh;
+	height: 50vh;
+	background: #1c1c1c;
+}
+
+.top{
+	position: relative;
+	width: 100%;
+	height: 4vh;
+	background: radial-gradient(circle, rgba(109,0,204,1) 0%, rgba(141,0,222,1) 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.top h1{
+	color: #fff;
+	font-size: 3.5vh;
+	font-weight: 300;
+}
+
+.table{
+	position: relative;
+	width: 100%;
+	border-collapse: collapse
+}
+
+.table thead tr th{
+	color: #fff;
+	font-weight: 300;
+	font-size: 2vh;
+	text-align: center;
+	padding: 0.2vh 0.2vh;
+	border-bottom: 1px solid #fff;
+}
+
+.table tbody tr td{
+	color: #fff;
+	font-weight: 300;
+	font-size: 2vh;
+	text-align: center;
+	padding: 0.2vh 0.2vh;
+}
+
+.table tbody tr:nth-child(even){
+	background-color: #252525;
+}
+
+.table tbody tr:nth-child(odd){
+	background-color: #303030;
+}
