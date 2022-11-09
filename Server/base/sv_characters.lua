@@ -5,7 +5,7 @@ local torsoBones = {
 }
 
 local function SpawnCharacter(ply)
-    local plyCharacter = Character(Vector(0, 0, 100))
+    local plyCharacter = Character(Vector(400, 0, 1100), Rotator())
     plyCharacter:SetHealth(100)
     plyCharacter:SetArmor(0)
     ply:Possess(plyCharacter)
